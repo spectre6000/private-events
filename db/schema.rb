@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20150513194029) do
     t.datetime "date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "creator_id"
+    t.integer  "users_id"
   end
 
-  add_index "events", ["creator_id", "user_id"], name: "index_events_on_creator_id"
+  add_index "events", ["users_id"], name: "index_events_on_users_id"
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false

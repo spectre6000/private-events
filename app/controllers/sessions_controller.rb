@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user
       flash[:success] = "logged in!"
       log_in user
-      redirect_to root_url
+      redirect_to user
     else
       flash[:warning] = "incorrect login"
       redirect_to root_url

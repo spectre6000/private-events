@@ -1,10 +1,7 @@
-
-<%= link_to 'Signup', signup_path if !logged_in? %>
-<%= link_to 'Log in', login_path if !logged_in? %>
 <%= link_to 'Log out', logout_path, method: "delete" if logged_in? %>
 
-<h3><%= current_user.name if logged_in? %></h3>
+<%= render @user %>
 
-<ul>
-<%= render @users %>
+<ul class="events">
+  <%= render @events if !@events.nil? %>
 </ul>
