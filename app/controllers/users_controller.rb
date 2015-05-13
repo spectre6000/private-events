@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "Welcome to mini-eventbrite!"
       log_in(@user)
-      redirect_to root_url
+      redirect_to @user
     else
       redirect_to root_url
     end        
