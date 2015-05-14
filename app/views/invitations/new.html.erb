@@ -1,0 +1,16 @@
+<h1>Invite someone to an event</h1>
+
+<div>
+  <%= form_for(@invitation) do |f| %>
+    
+    <%= hidden_field_tag :attended event, event.id %>
+
+    <%= f.label :date %>
+    <%= f.datetime_select :date %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <%= f.submit "Create my event" %>
+  <% end %>
+</div>
