@@ -1,4 +1,6 @@
 <%= link_to 'Log out', logout_path, method: "delete" if logged_in? %>
+<%= link_to 'New event', new_event_path %>
+<%= link_to "home", root_path %>
 
 <%= render @user %>
 

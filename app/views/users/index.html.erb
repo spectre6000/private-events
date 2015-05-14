@@ -1,13 +1,13 @@
-
+<ul>
 <%= link_to 'Signup', new_user_path if !logged_in? %>
 <%= link_to 'Log in', login_path if !logged_in? %>
 <%= link_to 'Log out', logout_path, method: "delete" if logged_in? %>
-
+<%= link_to 'User Page' , current_user if logged_in? %>
+<%= link_to 'Event Index' , events_path if logged_in? %>
+</ul>
 <h1>Private-events</h1>
 
-<h3><%= current_user.name if logged_in? %></h3>
-
 <ul class="users">
-<%= render @users %>
+  <%= render @users %>
 </ul>
 
