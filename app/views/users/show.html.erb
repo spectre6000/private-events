@@ -2,13 +2,21 @@
 <%= link_to 'New event', new_event_path %>
 <%= link_to "home", root_path %>
 
-<%= render @user %>
+<%= render current_user %>
 
+<%= Time.now %>
+
+<p>Events created by <%= current_user.name %> </p>
 <ul class="events">
   <%= render @events if !@events.nil? %>
 </ul>
 
-<p>Attending</p>
+<p>Events to be attended by <%= current_user.name %></p>
 <% @attending.each do |x| %>
+  <li><%= (link_to x.description, x) %></li>
+<% end %>
+
+<p>Events previously attended by <%= current_user.name %></p>
+<% @attended.each do |x| %>
   <li><%= (link_to x.description, x) %></li>
 <% end %>
