@@ -8,6 +8,7 @@
   <%= render @events if !@events.nil? %>
 </ul>
 
-<ul class="invitations">
-  <%= render @invitations.event if !@invitations.nil? %>
-</ul>
+<p>Attending</p>
+<% @attending.each do |x| %>
+  <li><%= (link_to x.description, x) %></li>
+<% end %>

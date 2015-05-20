@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @events = @user.events
-    @invitations = @user.attendees
+    @attending = Event.joins(:invitations).where(:invitations => { :attendee_id => @user.id, :rsvp => true})
   end
 
   def index

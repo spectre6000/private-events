@@ -2,4 +2,13 @@
 <h3>Date: <%= @event.date %></h3>
 <p>Created by: <%= @event.creator.name %>
 
-<%= @attendees %>
+
+<p>Attendees</p>
+<% @attendees.each do |x| %>
+  <li><%= (link_to x.name, x) %></li>
+<% end %>
+
+<p>Non-Attendees</p>
+<% @xattendees.each do |x| %>
+  <li><%= (link_to x.name, x) %></li>
+<% end %>
